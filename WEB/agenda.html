@@ -14,6 +14,29 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <link rel="canonical" href="https://mdbootstrap.com/plugins/jquery/full-calendar/">
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="https://mdbootstrap.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+<link rel="stylesheet" id="wc-block-style-css" href="https://mdbootstrap.com/wp-content/plugins/woocommerce/assets/css/blocks/style.css?ver=3.6.5" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="https://mdbootstrap.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.4" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel="stylesheet" id="wsl-widget-css" href="https://mdbootstrap.com/wp-content/plugins/wordpress-social-login/assets/css/style.css?ver=5.2.2" type="text/css" media="all">
+<link rel="stylesheet" id="compiled.css-css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.8.8.min.css?ver=4.8.8" type="text/css" media="all">
 </head>
 
 <body>
@@ -36,12 +59,12 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="index.html">Servicios
-          <span class="sr-only">(current)</span>
+          
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="#">Agenda
             <span class="sr-only">(current)</span>
         </a>
@@ -60,7 +83,10 @@
 </nav>
 <!--/.Navbar-->
 <div id="container">
-    <div id="calendar"></div>
+    <section>
+
+        <frame src="calendar.html">
+  </section>
 </div>
   <!-- Start your project here-->
 <!-- SCRIPTS -->
@@ -72,60 +98,6 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>  
-  
-  <script>
-      $('#calendar').fullCalendar({
-  header: {
-    left: 'prev,next today',
-    center: 'addEventButton',
-    right: 'month,agendaWeek,agendaDay,listWeek'
-  },
-  defaultDate: '2018-11-16',
-  navLinks: true,
-  editable: true,
-  eventLimit: true,
-  events: [{
-      title: 'Simple static event',
-      start: '2018-11-16',
-      description: 'Super cool event'
-    },
-
-  ],
-  customButtons: {
-    addEventButton: {
-      text: 'Add new event',
-      click: function () {
-        var dateStr = prompt('Enter date in YYYY-MM-DD format');
-        var date = moment(dateStr);
-
-        if (date.isValid()) {
-          $('#calendar').fullCalendar('renderEvent', {
-            title: 'Dynamic event',
-            start: date,
-            allDay: true
-          });
-        } else {
-          alert('Invalid Date');
-        }
-
-      }
-    }
-  },
-  dayClick: function (date, jsEvent, view) {
-    var date = moment(date);
-
-    if (date.isValid()) {
-      $('#calendar').fullCalendar('renderEvent', {
-        title: 'Dynamic event from date click',
-        start: date,
-        allDay: true
-      });
-    } else {
-      alert('Invalid');
-    }
-  },
-});
-  </script>
 </body>
 
 </html>
