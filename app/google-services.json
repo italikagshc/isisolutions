@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "619767195076",
+    "firebase_url": "https://italika-hack-challenge.firebaseio.com",
+    "project_id": "italika-hack-challenge",
+    "storage_bucket": "italika-hack-challenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619767195076:android:d7a58891f8ffcc53",
+        "android_client_info": {
+          "package_name": "com.example.italika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619767195076-32bq2aiavt6d92fn6ak5j10fr0212ujr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXrSprmUEvy5GveJZbacal1K8vrS0ISQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619767195076-32bq2aiavt6d92fn6ak5j10fr0212ujr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
