@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/fragmentStartContent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fragmentStartReciclerView"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+                <LinearLayout
+                    android:id="@+id/fragmentStartLlNotResut"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No tienes motocicletas registradas"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+
+                    <Button
+                        android:id="@+id/fragmentStartButtonAddLl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Agregar"
+                        android:textColor="@color/colorBlack"
+                        android:background="@android:color/transparent"/>
+
+                    <Button
+                        android:id="@+id/fragmentStartButtonShopingLl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Comprar en linea"
+                        android:textColor="@color/colorAccent"
+                        android:background="@android:color/transparent"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/activityInspeccionsLlR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:text="Sin registros"/>
+
+            </LinearLayout>
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fragmentStartButtonShopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="70dp"
+                android:layout_alignBottom="@id/fragmentStartButtonAdd"
+                android:layout_alignEnd="@id/fragmentStartContent"
+                app:fabSize="normal"
+                app:elevation="5dp"
+                app:backgroundTint="@color/colorAccent"
+                android:src="@drawable/icon_shop"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fragmentStartButtonAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignBottom="@id/fragmentStartContent"
+                android:layout_alignEnd="@id/fragmentStartContent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                app:fabSize="normal"
+                app:elevation="5dp"
+                app:backgroundTint="@color/colorBlack"
+                android:src="@drawable/icon_add"/>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>
