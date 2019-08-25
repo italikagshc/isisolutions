@@ -15,5 +15,4 @@ class Config {
     const PASSWORD = "";
     
     const DATABASE = "italika";
-    //const DATABASE = "yoenvio";
 }
