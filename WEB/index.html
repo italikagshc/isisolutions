@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Administrador de servicios</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+  <!-- Navbar brand -->
+  <img class="navbar-brand" href="#" src="img/logo.png" width = "12%" height="12%">
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Servicios
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="agenda.html">Agenda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="chat.html">Chat</a>
+      </li>
+
+    </ul>
+    <!-- Links -->
+
+    
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+<div id="container"></div>
+  <!-- Start your project here-->
+<!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript">
+    var text;
+  $.ajax({
+        url: 'https://yoenvio.synology.me/italika-sdk/service/?get&all', method: 'GET', crossDomain: true, cache: false, dataType: 'json',
+        success: function (result) {
+            for(var i = 0;i<result.data.length; i++){ 
+    $("#container").append('<div class="card weather-card mx-3 my-3">'+
+  '<!-- Card content -->'+
+  '<div class="card-body pb-3">'+
+    '<!-- Title -->'+
+    '<h4 class="card-title font-weight-bold">'+result.data[i].client.name+'</h4>'+
+    '<!-- Text -->'+
+    '<div class="d-flex justify-content-between">'+
+      '<p class="card-text">'+result.data[i].client.email+'</p><p class="card-text">Direccion S/N</p>'+
+'<p class="card-text">'+result.data[i].client.city+", "+result.data[i].client.state+'</p>'+
+'<i class="fas fa-sun-o fa-5x pt-3 amber-text"></i>'+
+    '</div>'+
+    '<div class="d-flex justify-content-between mb-4 article__content">'+
+      '<div>Marca: <p>'+result.data[i].client.email+'</p></div>'+
+    '<div>Modelo: <p>'+result.data[i].vehicle.model+'</p></div>'+
+    '<div>Kilometraje Actual: <p>'+result.data[i].vehicle.km+'</p></div>'+
+    '<div>Proximo Servicio: <p>'+result.data[i].vehicle.kmService+'</p></div>'+
+'<div>Serie: <p>'+result.data[i].vehicle.noSerie+'</p></div>'+
+    '<div>Placas: <p>'+result.data[i].vehicle.plates+'</p></div>'+
+    '<div>Año: <p>'+result.data[i].vehicle.year+'</p></div>'+
+    '</div>'+
+    '<div id="collapse-content" name="divcon'+i+'" class="collapse-content">'+
+      
+      '<div class="collapse" id="collapseExample" name="divcoll'+i+'"style="">'+
+        '<spam class="font-weight-normal align-middle">Refacciones</spam>'+
+        '<table id="table'+i+'" class="table table-borderless table-sm mb-0">'+
+          '<tbody id="tbody'+i+'">'
+            );
+    
+    for(j = 0; j<result.data[i].refactions.length;j++){
+        $('#tbody'+i).append('<tr>'+
+                '<td class="font-weight-normal align-middle">'+result.data[i].refactions[j].name+'</td>'+
+'<td class="font-weight-normal align-middle">$'+result.data[i].refactions[j].price+'</td>'+
+'<td class="font-weight-normal align-middle">'+result.data[i].refactions[j].note+'</td>'+
+'</tr>');
+
+    }
+    
+    $("[name='divcon"+i+"']").append(
+      '</tbody>'+
+        '</table>'+
+      '</div>'+
+      '<hr class="">'+
+        '<a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 deep-purple-text waves-effect waves-effect collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>'+
+    '</div>'+
+  '</div>'+
+'</div>');
+
+    
+            }
+            
+        }, error: function (xhr) {
+            console.log(xhr);
+        }});
+
+  </script>
+
+
+  
+
+  
+</body>
+
+</html>
